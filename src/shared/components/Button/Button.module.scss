@@ -1,6 +1,6 @@
-$color: red;
+@import '@styles';
 
 .Button {
-    background: #000;
-    color: $color;
+    @include bg-color(20);
+    @include bg-opacity(20);
 }

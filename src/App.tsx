@@ -5,9 +5,9 @@ import { Button } from '@shared/components';
 
 function App() {
     return (
-        <div>
+        <>
             <Button>Hello World!</Button>
-        </div>
+        </>
     );
 }
 
