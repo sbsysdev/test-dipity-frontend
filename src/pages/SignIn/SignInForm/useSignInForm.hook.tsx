@@ -1,5 +1,6 @@
 /* react */
 import { useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 /* props */
 import { SignInFormSchema, SignInFormValues } from './SignInForm.props';
 /* hooks */
@@ -18,6 +19,8 @@ export function useSignInForm() {
     /* states/hooks */
     const [isPasswordVisible, , , togglePasswordVisibility] = useActive();
 
+    const navigate = useNavigate();
+
     const {
         register,
         handleSubmit,
@@ -29,6 +32,8 @@ export function useSignInForm() {
     /* actions */
     const handleSignIn = handleSubmit((data) => {
         console.log(data);
+
+        navigate('/dashboard/clients', { replace: true });
     });
 
     /* props */

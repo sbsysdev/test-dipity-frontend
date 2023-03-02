@@ -2,7 +2,7 @@
 import { memo, useEffect } from 'react';
 import { createBrowserRouter, Outlet, useNavigate, RouterProvider } from 'react-router-dom';
 /* pages */
-import { SignInPage, SignUpPage } from './pages';
+import { ClientsPage, SignInPage, SignUpPage } from './pages';
 
 /* root component */
 const Root = memo(() => {
@@ -30,6 +30,10 @@ const router = createBrowserRouter([
             {
                 path: 'auth/sign-up',
                 element: <SignUpPage />,
+            },
+            {
+                path: 'dashboard/clients',
+                element: <ClientsPage />,
             },
         ],
     },
