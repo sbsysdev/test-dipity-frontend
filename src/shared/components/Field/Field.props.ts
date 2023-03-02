@@ -8,7 +8,10 @@ export interface ContentProps {
 }
 
 export interface FieldProps
-    extends DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement> {
+    extends Omit<
+        DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>,
+        'ref' | 'children'
+    > {
     hasError?: boolean;
     titleContent?: Slot<ContentProps>;
     beforeContent?: Slot<ContentProps>;

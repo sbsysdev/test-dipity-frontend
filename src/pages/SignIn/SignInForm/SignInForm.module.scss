@@ -1,0 +1,54 @@
+@import '@styles';
+
+.Form {
+    @include flex;
+    @include gap(all md);
+    @include max-width(xl, component);
+    @include padding(all md);
+    @include rounded(all xs);
+    @include shadow(all xs);
+    width: 100%;
+
+    h1 {
+        @include font-size(lg);
+        @include font-weight(60);
+    }
+
+    hr {
+        @include border-width(y xs);
+        @include border-color(y 40);
+        border-style: dashed;
+    }
+
+    fieldset {
+        @include flex;
+        @include gap(all md);
+
+        & > p {
+            @include outlined-field(neutral, secondary);
+        }
+    }
+
+    [type='submit'] {
+        @include filled-button(primary, secondary);
+    }
+
+    & > span {
+        & > a {
+            @include font-color(60, primary);
+            @include font-weight(60);
+            @include interactable;
+            text-decoration: none;
+        }
+    }
+
+    h1,
+    & > span {
+        text-align: center;
+    }
+}
+
+.PasswordIcon {
+    @include interactable;
+    @include margin(right xs);
+}

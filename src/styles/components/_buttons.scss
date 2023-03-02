@@ -1,0 +1,12 @@
+@mixin filled-button($palette: neutral, $palette-error: neutral) {
+    @include bg-color(60, $palette);
+    @include font-color(l30);
+    @include font-weight(60);
+    @include interactable;
+    @include padding(all xs);
+    @include rounded(all xs);
+
+    &[data-has-error='true'] {
+        @include bg-color(60, $palette-error);
+    }
+}

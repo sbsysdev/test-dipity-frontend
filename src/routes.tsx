@@ -1,6 +1,8 @@
 /* react */
 import { memo, useEffect } from 'react';
 import { createBrowserRouter, Outlet, useNavigate, RouterProvider } from 'react-router-dom';
+/* pages */
+import { SignInPage } from './pages';
 
 /* root component */
 const Root = memo(() => {
@@ -23,7 +25,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: 'auth/sign-in',
-                element: <h1>Sign In</h1>,
+                element: <SignInPage />,
             },
             {
                 path: 'auth/sign-up',

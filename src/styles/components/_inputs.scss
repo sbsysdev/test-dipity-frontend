@@ -1,4 +1,4 @@
-@mixin outlined-input($palette: neutral, $palette-error: neutral) {
+@mixin outlined-field($palette: neutral, $palette-error: neutral) {
     @debug $palette-error;
     & > [slot='content'] {
         @include border-color(all 40 $palette);
