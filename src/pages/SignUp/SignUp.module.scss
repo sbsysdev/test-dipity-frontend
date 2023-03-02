@@ -1,0 +1,21 @@
+@import '@styles';
+
+.Content {
+    @include flex;
+    flex-grow: 1;
+
+    main {
+        @include flex(column, center, center);
+        @include padding(all md);
+        flex-grow: 1;
+    }
+
+    footer {
+        @include bg-color(d10);
+        @include dots;
+        @include font-color(l30);
+        @include font-size(sm);
+        @include padding(all sm);
+        text-align: center;
+    }
+}

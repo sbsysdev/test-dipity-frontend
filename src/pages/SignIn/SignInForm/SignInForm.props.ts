@@ -9,6 +9,6 @@ export interface SignInFormValues {
 export const SignInFormSchema = yup
     .object({
         email: yup.string().email('email.format').required('email.required'),
-        password: yup.string().required('password.required').min(8, 'password.min'),
+        password: yup.string().required('password.required').min(9, 'password.min'),
     })
     .required();
