@@ -1,0 +1,15 @@
+@import '@styles';
+
+.Field {
+    @include flex;
+
+    & > [slot='content'] {
+        @include flex(row, center);
+
+        & > [slot='input'] {
+            flex-grow: 1;
+            height: 100%;
+            width: 0;
+        }
+    }
+}

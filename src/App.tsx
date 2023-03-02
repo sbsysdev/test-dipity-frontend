@@ -1,12 +1,18 @@
 /* react */
 import { memo } from 'react';
 /* components */
-import { Button } from '@shared/components';
+import { Field } from '@shared/components';
+/* styles */
+import styles from './App.module.scss';
 
 function App() {
     return (
         <>
-            <Button>Hello World!</Button>
+            <Field
+                className={styles.Field}
+                hasError
+                inputContent={(props) => <input {...props} />}
+            />
         </>
     );
 }
