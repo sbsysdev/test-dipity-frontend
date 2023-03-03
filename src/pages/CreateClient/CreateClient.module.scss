@@ -1,0 +1,68 @@
+@import '@styles';
+
+.Create {
+    @include bg-color(l10);
+    @include flex;
+    @include gap(all xs);
+    @include padding(all md);
+    @include rounded(all xs);
+    @include width(xl, component);
+    max-width: 100%;
+
+    & > h2 {
+        @include dots;
+        @include font-weight(60);
+        text-align: center;
+    }
+
+    hr {
+        @include border-color(y 40);
+        @include border-width(y xs);
+        border-style: dashed;
+    }
+
+    form {
+        @include flex;
+        @include gap(all md);
+        @include padding(top md);
+
+        fieldset {
+            @include flex;
+            @include gap(all md);
+
+            & > p {
+                @include outlined-field(neutral, secondary);
+
+                textarea {
+                    @include max-height(xs, component);
+                    @include min-height(xs, component);
+                    resize: none;
+                }
+            }
+        }
+
+        div {
+            @include gap(all md);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            button {
+                @include flex(row, center);
+                @include gap(all md);
+                overflow: hidden;
+
+                span {
+                    @include dots;
+                }
+            }
+
+            .Cancel {
+                @include filled-button;
+            }
+
+            .Save {
+                @include filled-button(primary);
+            }
+        }
+    }
+}

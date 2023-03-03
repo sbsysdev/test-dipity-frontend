@@ -4,9 +4,12 @@ import { memo } from 'react';
 import { ClientsProvider } from './Clients.context';
 /* hooks */
 import { useClients } from './useClients.hook';
+/* layouts */
+import { ModalLayout } from '@shared/layouts';
 /* components */
 import { ClientsHeader } from './ClientsHeader';
 import { ClientList } from './ClientList';
+import { CreateClientPage } from '../CreateClient';
 /* styles */
 import clientsStyles from './Clients.module.scss';
 
@@ -20,6 +23,14 @@ function Clients() {
 
                 <ClientList />
             </div>
+
+            <ModalLayout
+                isVisible={context.isCreateClient}
+                hasIndentation
+                rowAlignment="center"
+                colAlignment="center">
+                <CreateClientPage />
+            </ModalLayout>
         </ClientsProvider>
     );
 }

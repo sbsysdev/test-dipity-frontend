@@ -1,7 +1,7 @@
 @import '@styles';
 
 .ModalLayout {
-    @include inset;
+    @include inset(fixed);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;

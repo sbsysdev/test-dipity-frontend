@@ -4,6 +4,9 @@ import { createContext, useContext } from 'react';
 import { ClientsContextProps, ClientsProviderProps } from './Clients.props';
 
 const Context = createContext<ClientsContextProps>({
+    isCreateClient: false,
+    openCreateClient: () => {},
+    closeCreateClient: () => {},
     selectClientToDelete: (_) => () => {},
     selectClientToEdit: (_) => () => {},
     navigateToClientProducts: (_) => () => {},

@@ -1,11 +1,15 @@
 /* react */
 import { memo } from 'react';
+/* context */
+import { useClientsContext } from '../Clients.context';
 /* components */
 import { Field } from '@shared/components';
 /* styles */
 import headerStyles from './ClientsHeader.module.scss';
 
 function ClientsHeader() {
+    const { openCreateClient } = useClientsContext();
+
     return (
         <header className={headerStyles.Header}>
             <h1>Client list</h1>
@@ -17,7 +21,9 @@ function ClientsHeader() {
                     )}
                 />
 
-                <button type="button">Create Client</button>
+                <button type="button" onClick={openCreateClient}>
+                    Create Client
+                </button>
             </form>
         </header>
     );

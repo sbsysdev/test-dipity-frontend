@@ -2,9 +2,13 @@
 import { useNavigate } from 'react-router-dom';
 /* props */
 import { ClientsContextProps } from './Clients.props';
+/* hooks */
+import { useActive } from '@shared/hooks';
 
 export function useClients() {
     /* states/hooks */
+    const [isCreateClient, openCreateClient, closeCreateClient] = useActive();
+
     const navigate = useNavigate();
 
     /* actions */
@@ -28,6 +32,9 @@ export function useClients() {
 
     /* context */
     const context: ClientsContextProps = {
+        isCreateClient,
+        openCreateClient,
+        closeCreateClient,
         selectClientToDelete,
         selectClientToEdit,
         navigateToClientProducts,
