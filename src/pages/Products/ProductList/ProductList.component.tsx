@@ -24,7 +24,7 @@ function ProductList() {
                             children: 'Expires',
                         },
                         {
-                            children: 'In stok',
+                            children: 'In stock',
                         },
                         {
                             children: 'Actions',

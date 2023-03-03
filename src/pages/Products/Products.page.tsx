@@ -5,12 +5,12 @@ import { ProductsProvider } from './Products.context';
 /* hooks */
 import { useProducts } from './useProducts.hook';
 /* layouts */
-/* import { ModalLayout } from '@shared/layouts'; */
+import { ModalLayout } from '@shared/layouts';
 /* components */
 import { ProductsHeader } from './ProductsHeader';
 import { ProductList } from './ProductList';
-/* import { CreateProductPage } from '../CreateProduct';
-import { DeleteProductPage } from '../DeleteProduct';
+import { CreateProductPage } from '../CreateProduct';
+/* import { DeleteProductPage } from '../DeleteProduct';
 import { EditProductPage } from '../EditProduct'; */
 /* styles */
 import productsStyles from './Products.module.scss';
@@ -26,13 +26,13 @@ function Products() {
                 <ProductList />
             </div>
 
-            {/* <ModalLayout
+            <ModalLayout
                 isVisible={context.isCreateProduct}
                 hasIndentation
                 rowAlignment="center"
                 colAlignment="center">
                 <CreateProductPage />
-            </ModalLayout> */}
+            </ModalLayout>
 
             {/* <ModalLayout
                 isVisible={context.isSelectedProductToDelete}
