@@ -8,4 +8,8 @@
     &[data-is-empty='true'] {
         @include opacity(0);
     }
+
+    &.Dots {
+        @include dots;
+    }
 }

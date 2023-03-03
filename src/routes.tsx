@@ -1,6 +1,8 @@
 /* react */
 import { memo, useEffect } from 'react';
 import { createBrowserRouter, Outlet, useNavigate, RouterProvider } from 'react-router-dom';
+/* layouts */
+import { DashboardLayout } from './layouts';
 /* pages */
 import { ClientsPage, SignInPage, SignUpPage } from './pages';
 
@@ -32,8 +34,18 @@ const router = createBrowserRouter([
                 element: <SignUpPage />,
             },
             {
-                path: 'dashboard/clients',
-                element: <ClientsPage />,
+                path: 'dashboard',
+                element: <DashboardLayout />,
+                children: [
+                    {
+                        path: 'clients',
+                        element: <ClientsPage />,
+                    },
+                    {
+                        path: 'clients/:clientId/products',
+                        element: <h1>Products</h1>,
+                    },
+                ],
             },
         ],
     },

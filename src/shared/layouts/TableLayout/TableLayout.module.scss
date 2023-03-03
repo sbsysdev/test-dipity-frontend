@@ -1,0 +1,80 @@
+@import '@styles';
+
+.Table {
+    @include gap(all md);
+
+    thead,
+    tbody {
+        tr {
+            display: grid;
+
+            th,
+            td {
+                @include flex(row, center);
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+.PanelLayout {
+    flex-grow: 1;
+    overflow: hidden;
+
+    &.Col {
+        @include flex;
+    }
+
+    &.Row {
+        @include flex(row);
+    }
+}
+
+.ScrollLayout {
+    flex-grow: 1;
+    overflow: hidden;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+        @include height(none, split);
+        @include width(none, split);
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-track {
+        @include bg-color(10);
+        @include bg-opacity(0);
+        @include rounded(all md);
+        background-clip: content-box;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        @include bg-color(50);
+        @include bg-opacity(70);
+        @include rounded(all md);
+    }
+
+    &:hover {
+        &::-webkit-scrollbar {
+            @include height(md, split);
+            @include width(md, split);
+            background-color: transparent;
+        }
+
+        &::-webkit-scrollbar-track {
+            @include bg-opacity(70);
+        }
+    }
+
+    &.Col {
+        @include flex;
+        overflow-y: auto;
+        overflow-y: overlay;
+    }
+
+    &.Row {
+        @include flex(row);
+        overflow-x: auto;
+        overflow-x: overlay;
+    }
+}

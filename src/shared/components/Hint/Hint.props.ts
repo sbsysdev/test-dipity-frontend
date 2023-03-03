@@ -8,4 +8,5 @@ export interface HintProps
     > {
     hint?: string;
     error?: string;
+    hasDots?: boolean;
 }

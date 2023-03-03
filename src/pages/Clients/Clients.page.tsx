@@ -1,5 +1,7 @@
 /* react */
 import { memo } from 'react';
+/* context */
+import { ClientsProvider } from './Clients.context';
 /* hooks */
 import { useClients } from './useClients.hook';
 /* components */
@@ -9,14 +11,16 @@ import { ClientList } from './ClientList';
 import clientsStyles from './Clients.module.scss';
 
 function Clients() {
-    const {} = useClients();
+    const { context } = useClients();
 
     return (
-        <div className={clientsStyles.Content}>
-            <ClientsHeader />
+        <ClientsProvider context={context}>
+            <div className={clientsStyles.Content}>
+                <ClientsHeader />
 
-            <ClientList />
-        </div>
+                <ClientList />
+            </div>
+        </ClientsProvider>
     );
 }
 

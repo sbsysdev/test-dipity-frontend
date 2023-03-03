@@ -34,6 +34,16 @@ body,
     }
 }
 
+#modal {
+    z-index: 110;
+}
+#loader {
+    z-index: 120;
+}
+#notification {
+    z-index: 130;
+}
+
 input,
 select,
 button,

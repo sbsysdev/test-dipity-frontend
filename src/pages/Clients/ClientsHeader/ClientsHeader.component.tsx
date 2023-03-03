@@ -8,7 +8,7 @@ import headerStyles from './ClientsHeader.module.scss';
 function ClientsHeader() {
     return (
         <header className={headerStyles.Header}>
-            <h1>Clients</h1>
+            <h1>Client list</h1>
 
             <form onSubmit={(event) => event.preventDefault()}>
                 <Field
@@ -16,6 +16,8 @@ function ClientsHeader() {
                         <input placeholder="Filter by client's name" {...props} />
                     )}
                 />
+
+                <button type="button">Create Client</button>
             </form>
         </header>
     );
