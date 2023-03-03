@@ -7,8 +7,14 @@ const Context = createContext<ClientsContextProps>({
     isCreateClient: false,
     openCreateClient: () => {},
     closeCreateClient: () => {},
+    selectedClientToDelete: null,
+    isSelectedClientToDelete: false,
     selectClientToDelete: (_) => () => {},
+    unselectClientToDelete: () => {},
+    selectedClientToEdit: null,
+    isSelectedClientToEdit: false,
     selectClientToEdit: (_) => () => {},
+    unselectClientToEdit: () => {},
     navigateToClientProducts: (_) => () => {},
 });
 

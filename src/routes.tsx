@@ -4,7 +4,7 @@ import { createBrowserRouter, Outlet, useNavigate, RouterProvider } from 'react-
 /* layouts */
 import { DashboardLayout } from './layouts';
 /* pages */
-import { ClientsPage, SignInPage, SignUpPage } from './pages';
+import { ClientsPage, ProductsPage, SignInPage, SignUpPage } from './pages';
 
 /* root component */
 const Root = memo(() => {
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
                     },
                     {
                         path: 'clients/:clientId/products',
-                        element: <h1>Products</h1>,
+                        element: <ProductsPage />,
                     },
                 ],
             },

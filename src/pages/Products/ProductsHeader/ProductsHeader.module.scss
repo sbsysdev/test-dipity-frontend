@@ -1,0 +1,31 @@
+@import '@styles';
+
+.Header {
+    @include bg-color(10);
+    @include flex;
+    @include gap(all md);
+    @include padding(y md, x xl);
+    @include rounded(bottom xs);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    h1 {
+        @include font-size(xl);
+        @include font-weight(80);
+    }
+
+    form {
+        @include flex(row, center);
+        @include gap(all xl);
+
+        & > p {
+            @include outlined-field(primary, secondary);
+            flex-grow: 1;
+        }
+
+        & > button {
+            @include filled-button(primary, secondary);
+        }
+    }
+}

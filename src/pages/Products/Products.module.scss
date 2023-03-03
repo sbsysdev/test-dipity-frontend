@@ -1,0 +1,8 @@
+@import '@styles';
+
+.Content {
+    @include flex;
+    @include gap(all md);
+    flex-grow: 1;
+    position: relative;
+}

@@ -1,0 +1,26 @@
+@import '@styles';
+
+.Actions {
+    @include gap(all md);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+
+    & > button {
+        @include flex(row, center);
+        @include gap(all sm);
+        overflow: hidden;
+
+        & > span {
+            @include dots;
+        }
+    }
+
+    .Delete {
+        @include filled-button(secondary);
+    }
+
+    .Edit {
+        @include filled-button;
+    }
+}

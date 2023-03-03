@@ -1,0 +1,32 @@
+@import '@styles';
+
+.List {
+    @include flex;
+    @include padding(y md, x xl);
+    flex-grow: 1;
+
+    & > table {
+        & > thead {
+            @include bg-color(60, primary);
+            @include font-color(l10);
+            @include font-weight(lg);
+            @include padding(x xs);
+            @include rounded(all xs);
+
+            & > tr {
+                @include gap(all xs);
+                @include padding(y xs);
+            }
+        }
+
+        & > tbody > tr {
+            @include gap(all xs);
+            @include padding(all xs);
+            @include shadow(bottom xs);
+
+            &:last-child {
+                @include margin(bottom xs);
+            }
+        }
+    }
+}
