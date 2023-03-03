@@ -10,6 +10,12 @@ export function useClients() {
     /* states/hooks */
     const [isCreateClient, openCreateClient, closeCreateClient] = useActive();
 
+    const [selectedClientToDelete, setSelectedClientToDelete] = useState<{} | null>(null);
+    const isSelectedClientToDelete = useMemo(
+        () => selectedClientToDelete !== null,
+        [selectedClientToDelete]
+    );
+
     const [selectedClientToEdit, setSelectedClientToEdit] = useState<{} | null>(null);
     const isSelectedClientToEdit = useMemo(
         () => selectedClientToEdit !== null,
@@ -21,8 +27,12 @@ export function useClients() {
     /* actions */
     function selectClientToDelete(userId: string) {
         return () => {
-            console.log('TODO: Select user to delete');
+            setSelectedClientToDelete({ userId });
         };
+    }
+
+    function unselectClientToDelete() {
+        setSelectedClientToDelete(null);
     }
 
     function selectClientToEdit(userId: string) {
@@ -46,11 +56,17 @@ export function useClients() {
         isCreateClient,
         openCreateClient,
         closeCreateClient,
+
+        selectedClientToDelete,
+        isSelectedClientToDelete,
         selectClientToDelete,
+        unselectClientToDelete,
+
         selectedClientToEdit,
         isSelectedClientToEdit,
         selectClientToEdit,
         unselectClientToEdit,
+
         navigateToClientProducts,
     };
 
