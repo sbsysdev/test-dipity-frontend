@@ -1,14 +1,14 @@
 /* utils */
 import * as yup from 'yup';
 
-export interface CreateProductFormValues {
+export interface EditProductFormValues {
     name: string;
     category: string;
     expires: Date;
     stock: number;
 }
 
-export const CreateProductFormSchema = yup
+export const EditProductFormSchema = yup
     .object({
         name: yup.string().required('name.required'),
         category: yup.string().required('category.required'),
