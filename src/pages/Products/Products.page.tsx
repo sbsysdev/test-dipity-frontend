@@ -10,7 +10,7 @@ import { ModalLayout } from '@shared/layouts';
 import { ProductsHeader } from './ProductsHeader';
 import { ProductList } from './ProductList';
 import { CreateProductPage } from '../CreateProduct';
-/* import { DeleteProductPage } from '../DeleteProduct'; */
+import { DeleteProductPage } from '../DeleteProduct';
 import { EditProductPage } from '../EditProduct';
 /* styles */
 import productsStyles from './Products.module.scss';
@@ -34,13 +34,13 @@ function Products() {
                 <CreateProductPage />
             </ModalLayout>
 
-            {/* <ModalLayout
+            <ModalLayout
                 isVisible={context.isSelectedProductToDelete}
                 hasIndentation
                 rowAlignment="center"
                 colAlignment="center">
                 <DeleteProductPage />
-            </ModalLayout> */}
+            </ModalLayout>
 
             <ModalLayout
                 isVisible={context.isSelectedProductToEdit}
