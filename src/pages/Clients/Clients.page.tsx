@@ -10,6 +10,7 @@ import { ModalLayout } from '@shared/layouts';
 import { ClientsHeader } from './ClientsHeader';
 import { ClientList } from './ClientList';
 import { CreateClientPage } from '../CreateClient';
+import { EditClientPage } from '../EditClient';
 /* styles */
 import clientsStyles from './Clients.module.scss';
 
@@ -30,6 +31,14 @@ function Clients() {
                 rowAlignment="center"
                 colAlignment="center">
                 <CreateClientPage />
+            </ModalLayout>
+
+            <ModalLayout
+                isVisible={context.isSelectedClientToEdit}
+                hasIndentation
+                rowAlignment="center"
+                colAlignment="center">
+                <EditClientPage />
             </ModalLayout>
         </ClientsProvider>
     );

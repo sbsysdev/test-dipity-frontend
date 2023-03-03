@@ -1,7 +1,9 @@
 /* react */
 import { useMemo } from 'react';
+/* context */
+import { useClientsContext } from '../Clients/Clients.context';
 /* props */
-import { CreateClientFormSchema, CreateClientFormValues } from './CreateClient.props';
+import { EditClientFormSchema, EditClientFormValues } from './EditClient.props';
 /* hooks */
 import { useForm } from 'react-hook-form';
 /* components */
@@ -9,17 +11,20 @@ import { FieldProps, Hint } from '@shared/components';
 /* utils */
 import { yupResolver } from '@hookform/resolvers/yup';
 
-export function useCreateClient() {
+export function useEditClient() {
     const {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm<CreateClientFormValues>({
-        resolver: yupResolver(CreateClientFormSchema),
+    } = useForm<EditClientFormValues>({
+        resolver: yupResolver(EditClientFormSchema),
     });
 
+    const { selectedClientToEdit } = useClientsContext();
+    console.log(selectedClientToEdit);
+
     /* actions */
-    const handleCreateClient = handleSubmit((data) => {
+    const handleEditClient = handleSubmit((data) => {
         console.log(data);
     });
 
@@ -72,7 +77,7 @@ export function useCreateClient() {
         [register, errors.phone?.message]
     );
 
-    const createClientFields: FieldProps[] = [
+    const editClientFields: FieldProps[] = [
         nameFieldProps,
         lastNameFieldProps,
         emailFieldProps,
@@ -80,5 +85,5 @@ export function useCreateClient() {
         phoneFieldProps,
     ];
 
-    return { handleCreateClient, createClientFields };
+    return { handleEditClient, editClientFields };
 }

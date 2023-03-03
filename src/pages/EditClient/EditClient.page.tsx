@@ -3,29 +3,29 @@ import { memo } from 'react';
 /* context */
 import { useClientsContext } from '../Clients/Clients.context';
 /* hooks */
-import { useCreateClient } from './useCreateClient.hook';
+import { useEditClient } from './useEditClient.hook';
 /* components */
 import { Field, Icon } from '@shared/components';
 /* assets */
-import { mdiCloseBox, mdiFolder } from '@mdi/js';
+import { mdiCloseBox, mdiUpdate } from '@mdi/js';
 /* styles */
-import createStyles from './CreateClient.module.scss';
+import createStyles from './EditClient.module.scss';
 
-function CreateClient() {
-    const { handleCreateClient, createClientFields } = useCreateClient();
+function EditClient() {
+    const { handleEditClient, editClientFields } = useEditClient();
 
-    const { closeCreateClient } = useClientsContext();
+    const { unselectClientToEdit } = useClientsContext();
 
     return (
-        <div className={createStyles.Create}>
-            <h2>Create client</h2>
+        <div className={createStyles.Edit}>
+            <h2>Edit client</h2>
 
             <hr />
 
-            <form onSubmit={handleCreateClient}>
+            <form onSubmit={handleEditClient}>
                 <fieldset>
-                    {createClientFields.map((props, index) => (
-                        <Field key={`CreateClient_${index}`} {...props} />
+                    {editClientFields.map((props, index) => (
+                        <Field key={`EditClient_${index}`} {...props} />
                     ))}
                 </fieldset>
 
@@ -35,7 +35,7 @@ function CreateClient() {
                     <button
                         type="button"
                         className={createStyles.Cancel}
-                        onClick={closeCreateClient}>
+                        onClick={unselectClientToEdit}>
                         <i>
                             <Icon path={mdiCloseBox} />
                         </i>
@@ -43,12 +43,12 @@ function CreateClient() {
                         <span>Cancel</span>
                     </button>
 
-                    <button type="submit" className={createStyles.Save}>
+                    <button type="submit" className={createStyles.Update}>
                         <i>
-                            <Icon path={mdiFolder} />
+                            <Icon path={mdiUpdate} />
                         </i>
 
-                        <span>Save</span>
+                        <span>Update</span>
                     </button>
                 </div>
             </form>
@@ -56,4 +56,4 @@ function CreateClient() {
     );
 }
 
-export default memo(CreateClient);
+export default memo(EditClient);
